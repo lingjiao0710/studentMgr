@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>教师管理</title>
+<style type="text/css">
+  .datalist {
+  border: 1px solid #429fff; /* 表格边框 */
+  font-family: Arial;
+  border-collapse: collapse; /* 边框重叠 */
+}
+.datalist tr:hover {
+  background-color: #c4e4ff; /* 动态变色,IE6下无效！*/
+}
+.datalist caption {
+  padding-top: 3px;
+  padding-bottom: 2px;
+  font: bold 1.1em;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #f0f7ff;
+  border: 1px solid #429fff; /* 表格标题边框 */
+}
+.datalist th {
+  border: 1px solid #429fff; /* 行、列名称边框 */
+  background-color: #d2e8ff;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+.datalist td {
+  border: 1px solid #429fff; /* 单元格边框 */
+  text-align: center;
+  padding: 4px;
+  width: 200px;
+}
+.blue {
+  color: #d9eef7;
+  border: solid 1px #0076a3;
+  background: #0095cd;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to
+(#0078a5));
+  background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', 
+endColorstr='#0078a5');
+}
+.blue:hover {
+  background: #007ead;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+  background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
+}
+.blue:active {
+  color: #80bed6;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
+  background: -moz-linear-gradient(top,  #0078a5,  #00adee);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee');
+}
+.button {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 16px/100% 'Microsoft yahei',Arial, Helvetica, sans-serif;
+  padding: .5em 2em .55em;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  -webkit-border-radius: .5em; 
+  -moz-border-radius: .5em;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.button:hover {
+  text-decoration: none;
+}
+.button:active {
+  position: relative;
+  top: 1px;
+}
+.bigrounded {
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+}
+.medium {
+  font-size: 12px;
+  padding: .4em 1.5em .42em;
+}
+.small {
+  font-size: 11px;
+  padding: .2em 1em .275em;
+}  
+</style>
+</head>
+<body>
+<table class="datalist" summary="教师管理">
+  <caption>教师管理</caption>
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">姓名</th>
+      <th scope="col">手机号</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+   
+      <!-- <th scope="row">拨款</th> -->
+    <TMPL_LOOP name="teachers">
+    <tr>
+      <td><TMPL_VAR name="id"></td>
+      <td><TMPL_VAR name="name"></td>
+      <td><TMPL_VAR name="phone"></td>
+     <td><a href="studentMgr.cgi?mod=teacher&action=edit&id=<TMPL_VAR name="id"/>" class="button blue medium">修改</a> </td>
+       <td><a href="studentMgr.cgi?mod=teacher&action=delete&id=<TMPL_VAR name="id"/>" class="button blue medium" >删除</a> </td>
+    </tr>
+    </TMPL_LOOP>
+  </tbody>
+</table>
+<br>
+<a href="studentMgr.cgi?mod=teacher&action=addnew"  class="button blue">新增老师</a>
+</body>
+</html>

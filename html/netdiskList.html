@@ -1,0 +1,143 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<TITLE>个人网盘</TITLE>
+    <style type="text/css">
+       
+        .button {
+            display: inline-block;
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font: 16px/100% 'Microsoft yahei',Arial, Helvetica, sans-serif;
+            padding: .5em 2em .55em;
+            text-shadow: 0 1px 1px rgba(0,0,0,.3);
+            -webkit-border-radius: .5em; 
+            -moz-border-radius: .5em;
+            border-radius: .5em;
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+            box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        }
+        .button:hover {
+            text-decoration: none;
+        }
+        .button:active {
+            position: relative;
+            top: 1px;
+        }
+        .medium {
+            font-size: 12px;
+            padding: .4em 1.5em .42em;
+        }
+
+        /* blue */
+        .blue {
+            color: #d9eef7;
+            border: solid 1px #0076a3;
+            background: #0095cd;
+            background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+            background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+        }
+        .blue:hover {
+            background: #007ead;
+            background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+            background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
+        }
+        .blue:active {
+            color: #80bed6;
+            background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
+            background: -moz-linear-gradient(top,  #0078a5,  #00adee);
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee');
+        }
+
+        #mytable {
+         width: 700px;
+         padding: 0;
+         margin: 0;
+        }
+
+        caption {
+         padding: 0 0 5px 0;
+         width: 700px;
+         font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+         text-align: right;
+        }
+
+        th {
+         font: bold 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+         color: #4f6b72;
+         border-right: 1px solid #C1DAD7;
+         border-bottom: 1px solid #C1DAD7;
+         border-top: 1px solid #C1DAD7;
+         letter-spacing: 2px;
+         text-transform: uppercase;
+         text-align: center;
+         padding: 6px 6px 6px 12px;
+         background: #CAE8EA url(images/bg_header.jpg) no-repeat;
+        }
+
+        th.nobg {
+         border-top: 0;
+         border-left: 0;
+         border-right: 1px solid #C1DAD7;
+         background: none;
+        }
+
+        td {
+         border-right: 1px solid #C1DAD7;
+         border-bottom: 1px solid #C1DAD7;
+         background: #fff;
+         font-size:14px;
+         padding: 6px 6px 6px 12px;
+         color: #4f6b72;
+         width: 200px;
+         text-align: center;
+        }
+
+
+        td.alt {
+         background: #F5FAFA;
+         color: #797268;
+        }
+
+        th.spec {
+         border-left: 1px solid #C1DAD7;
+         border-top: 0;
+         background: #fff url(images/bullet1.gif) no-repeat;
+         font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        th.specalt {
+         border-left: 1px solid #C1DAD7;
+         border-top: 0;
+         background: #f5fafa url(images/bullet2.gif) no-repeat;
+         font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+         color: #797268;
+        }
+        </style>
+</HEAD>
+<BODY>
+    <table class="datalist">
+        <thead>
+            <tr><th>文件名</th><th>上传时间</th><th>文件大小</th><th></th></tr>
+        </thead>
+        <tbody>
+            <TMPL_LOOP name="files">
+                <tr>
+                   <!--  <td><input type="checkbox" name="selectedFileName" value="<TMPL_VAR name="fileName"/>" /></td> -->
+                    <td><a target="_blank" href="../netdisk/<TMPL_VAR name="fileName"/>" download="<TMPL_VAR name="fileName"/>"><TMPL_VAR name="fileName"/></a></td>
+                    <td><TMPL_VAR name="createTime"/></td>
+                    <td><TMPL_VAR name="fileSize"/></td>
+                    <td><a class="button blue medium" href="studentMgr.cgi?mod=netdisk&action=delete&fileName=<TMPL_VAR name="fileName"/>">删除</a></td>
+                </tr>
+            </TMPL_LOOP>
+        </tbody>
+    </table>
+    <br>
+     <a href="studentMgr.cgi?mod=netdisk&action=upload" class="button blue medium">上传文件</a>
+</BODY>
+</HTML>

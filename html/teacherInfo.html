@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		/** 清除内外边距 **/
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		hr,
+		p,
+		blockquote,
+
+		/* structural elements 结构元素 */
+
+		dl,
+		dt,
+		dd,
+		ul,
+		ol,
+		li,
+
+		/* list elements 列表元素 */
+
+		pre,
+
+		/* text formatting elements 文本格式元素 */
+
+		form,
+		fieldset,
+		legend,
+		input,
+		textarea,
+
+		/* form elements 表单元素 */
+
+		/* table elements 表格元素 */
+
+		{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-decoration: none;
+		}
+
+		/*
+		 * 完美轻拂动
+		 */
+		.clearfix:after{
+			clear: both;
+			display: block;
+			content: '';
+		}
+
+		/*
+		 * IE6兼容问题的清除浮动
+		 */
+		.clearfix{
+			zoom: 1;
+		}
+
+		/*
+		 * 左浮动
+		 */
+		.fl{
+			float: left;
+		}
+
+		/*
+		 * 有浮动
+		 */
+		.fr{
+			float: right;
+		}
+
+		/*
+		 * 安全距离，容器
+		 */
+
+		.container{
+			width:100%;
+			background: #eeeeee;
+			/*padding:30px 60px 65px 30px;*/
+		}
+		.content{
+			width:780px;
+			background: #ffffff;
+			-moz-border-radius:8px;
+			-webkit-border-radius:8px;
+			border-radius: 8px;
+			margin: 30px auto;
+		}
+		b,strong{
+			font-weight: normal;
+		}
+		i,em{
+			font-style: normal;
+		}
+		a{
+			text-decoration: none;
+		}
+		li{
+			list-style: none;
+		}
+		body,html{
+			background: #eeeeee;
+			height: 100%;
+		}	
+		.flgure .info{
+			position: absolute;
+			left: 0;
+			top: -40px;
+		}
+		.content {
+			position: relative;
+			top:40px;
+		}
+		.flgure .info li {
+			float: left;
+			width: 150px;
+			height: 38px;
+			border: 1px solid #cccccc;
+			background: #fff;
+			color: #2f2f2f;
+			border-radius: 10px 10px 0 0;
+			font-size: 15px;
+			line-height: 38px;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.flgure ul li.active {
+			background: #0f8383;
+			border: 1px solid #0f8383;
+			color: #fff;
+		}
+
+		.basic {
+			width: 780px;
+			height: 844px;
+			background: #fff;
+		}
+
+		.basic .basicInfo #leave-statistical {
+			padding-top: 20px;
+			width: 335px;
+			height: 265px;
+		}
+
+		.basic .basicInfo #gender-statistical {
+			width: 335px;
+			height: 265px;
+		}
+
+		.basic .basicInfo #province-statistical {
+			width: 335px;
+			height: 265px;
+		}
+
+		.basic .basicInfo dl{
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			overflow: hidden;
+			margin-top: 20px;
+		}
+		.basic .basicInfo dl:hover{
+			background: #e7f2f9;
+		}
+		.basic .basicInfo dl.table-title{
+			float: left;
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			background: #5ca4d3;
+			margin-bottom: 20px;
+		}
+		.basic .basicInfo dl dt{
+			text-align: center;
+			padding: 0 42px;
+			float: left;
+			color: #fff;
+		}
+		.basic .basicInfo dl dd{
+			text-align: left;
+			float: left;
+			padding-left: 0;
+			padding: 0 50px;
+			height: 40px;
+			line-height: 40px;
+		}
+		.button {
+			display: inline-block;
+			outline: none;
+			cursor: pointer;
+			text-align: center;
+			text-decoration: none;
+			font: 16px/100% 'Microsoft yahei',Arial, Helvetica, sans-serif;
+			padding: .5em 2em .55em;
+			text-shadow: 0 1px 1px rgba(0,0,0,.3);
+			-webkit-border-radius: .5em; 
+			-moz-border-radius: .5em;
+			border-radius: .5em;
+			-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+			-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+			box-shadow: 0 1px 2px rgba(0,0,0,.2);
+		}
+		.button:hover {
+			text-decoration: none;
+		}
+		.button:active {
+			position: relative;
+			top: 1px;
+		}
+		.medium {
+			font-size: 12px;
+			padding: .4em 1.5em .42em;
+		}
+
+		/* blue */
+		.blue {
+			color: #d9eef7;
+			border: solid 1px #0076a3;
+			background: #0095cd;
+			background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+			background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+			filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+		}
+		.blue:hover {
+			background: #007ead;
+			background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+			background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+			filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
+		}
+		.blue:active {
+			color: #80bed6;
+			background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
+			background: -moz-linear-gradient(top,  #0078a5,  #00adee);
+			filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee');
+		}
+		/*body {
+		 font: normal 11px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+		 color: #4f6b72;
+		 background: #E6EAE9;
+		}*/
+
+		#mytable {
+		 width: 700px;
+		 padding: 0;
+		 margin: 0;
+		}
+
+		caption {
+		 padding: 0 0 5px 0;
+		 width: 700px;
+		 font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+		 text-align: right;
+		}
+
+		th {
+		 font: bold 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+		 color: #4f6b72;
+		 border-right: 1px solid #C1DAD7;
+		 border-bottom: 1px solid #C1DAD7;
+		 border-top: 1px solid #C1DAD7;
+		 letter-spacing: 2px;
+		 text-transform: uppercase;
+		 text-align: center;
+		 padding: 6px 6px 6px 12px;
+		 background: #CAE8EA url(images/bg_header.jpg) no-repeat;
+		}
+
+		th.nobg {
+		 border-top: 0;
+		 border-left: 0;
+		 border-right: 1px solid #C1DAD7;
+		 background: none;
+		}
+
+		td {
+		 border-right: 1px solid #C1DAD7;
+		 border-bottom: 1px solid #C1DAD7;
+		 background: #fff;
+		 font-size:14px;
+		 padding: 6px 6px 6px 12px;
+		 color: #4f6b72;
+		 width: 200px;
+		 text-align: center;
+		}
+
+
+		td.alt {
+		 background: #F5FAFA;
+		 color: #797268;
+		}
+
+		th.spec {
+		 border-left: 1px solid #C1DAD7;
+		 border-top: 0;
+		 background: #fff url(images/bullet1.gif) no-repeat;
+		 font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+		}
+
+		th.specalt {
+		 border-left: 1px solid #C1DAD7;
+		 border-top: 0;
+		 background: #f5fafa url(images/bullet2.gif) no-repeat;
+		 font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+		 color: #797268;
+		}
+
+		</style>
+	</head>
+	<body>
+		<!-- <div class="container flgure">
+
+			<div class="content">
+					 -->
+
+				<!-- <div class="basic">
+					<div class="basicInfo select active">
+						<dl class="table-title">
+							<dt>序号</dt>
+							<dt>姓名</dt>
+							<dt>电话号码</dt>
+							<dt></dt>
+							<dt></dt>
+						</dl>
+						<TMPL_LOOP name="teachers">
+						<dl>
+							<dd><TMPL_VAR name="id"></dd>
+							<dd><TMPL_VAR name="name"></dd>
+							<dd><TMPL_VAR name="phone"></dd>
+							<dd><a href="studentMgr.cgi?mod=teacher&action=edit&id=<TMPL_VAR name="id"/>" class="button blue medium">修改</a> </dd>
+							<dd><a href="studentMgr.cgi?mod=teacher&action=delete&id=<TMPL_VAR name="id"/>" class="button blue medium">删除</a> </dd>
+						</dl>
+						</TMPL_LOOP>
+					</div>
+				</div> -->
+				<table summary="教师管理">
+				  <thead>
+				    <tr>
+				      <th scope="col" class="">序号</th>
+				      <th scope="col">姓名</th>
+				      <th scope="col">手机号</th>
+				      <th scope="col"></th>
+				      <th scope="col"></th>
+				    </tr>
+				  </thead>
+				  <tbody>
+			   
+			      <!-- <th scope="row">拨款</th> -->
+			    <TMPL_LOOP name="teachers">
+			    <tr>
+			      <td><TMPL_VAR name="id"></td>
+			      <td><TMPL_VAR name="name"></td>
+			      <td><TMPL_VAR name="phone"></td>
+			     <td><a href="studentMgr.cgi?mod=teacher&action=edit&id=<TMPL_VAR name="id"/>" class="button blue medium">修改</a> </td>
+			       <td><a href="studentMgr.cgi?mod=teacher&action=delete&id=<TMPL_VAR name="id"/>" class="button blue medium" >删除</a> </td>
+			    </tr>
+			    </TMPL_LOOP>
+			  </tbody>
+			</table>
+			<br>
+			<a  href="studentMgr.cgi?mod=teacher&action=addnew"  class="button blue medium">新增</a>
+		<!-- 	</div>
+		</div> -->
+	</body>
+</html>

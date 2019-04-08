@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>简单计算器</title>
+</head>
+<body>
+<form action="calc.cgi" method="post">
+	<input type="text" name="numa" value="<TMPL_VAR name="numa"/>"  />
+	+
+	<input type="text" name="numb" value="<TMPL_VAR name="numb"/>"  />
+	<input type="submit" name="calc" value="=">
+	<label> <TMPL_VAR name="result"/> </label>
+	<font color="red">  <TMPL_VAR name="error"/> </font>
+</form>
+
+
+</body>
+</html>
